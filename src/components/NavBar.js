@@ -4,9 +4,11 @@ Link
 } from "react-router-dom";
 
 export class NavBar extends Component {
-  qsetter=()=>
+  qsetter=(e)=>
   {
-    this.props.setState({q:document.getElementById("search1").value})
+    e.preventDefault();
+    this.props.setState.q=document.getElementById("search1").value;
+    console.log(document.getElementById("search1").value);
   }
   render() {
     return (

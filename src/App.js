@@ -6,14 +6,15 @@ import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
+  state={q:""};
   pageSize = 12;
   apiKey = process.env.REACT_APP_APIKEY;
-  state={q:''}
+  
   render() {
     return (
       <>
         <Router>
-          <NavBar setState={this.setState}/>
+          <NavBar setState={this.state}/>
           <Routes>
             <Route
               exact
@@ -26,6 +27,7 @@ export default class App extends Component {
                   category="general"
                 />
               }
+              // {console.log(...q)}
             ></Route>
             <Route
               exact
